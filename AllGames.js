@@ -17,14 +17,16 @@ function PullGame(Name) {
 function spli(oneBef, str, rep) {
     let f = str.split(str[oneBef])[0];
     let e = str[oneBef] + str.split(str[oneBef])[1];
-    return f + rep + e;
+    return f + "" + rep + "" + e;
 }
 function compileGame(Game) {
+  let e = Game;
   for (let i = 0; i < Game.length; i++) {
     if (Game[i] == "'") {
-      Game.split(Game[i])[0].splice(i, 0, "\\");
+      e = spli(i, e, "\\");
     }
   }
+  return e;
 }
 </script>
 */
