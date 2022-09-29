@@ -16,24 +16,23 @@ function PullGame(Name) {
 <script>
 function spli(oneBef, str, rep) {
 	let ss = str;
-    let og = str[oneBef]
-	ss = ss.replace("'", "@");
-    let f = ss.split("@")[0];
-    let e = og + "" + ss.split("@")[1];
-    console.log(ss);
+    let og = str[oneBef];
+	ss = ss.replace("'", "█");
+    let f = ss.split("█")[0];
+    let e = og + "" + ss.split("█")[1];
     return f + "" + rep + "" + e;
 }
 function compileGame(Game) {
   let e = Game;
-  let lg = Game.length;
-  for (let i = 0; i < lg; i++) {
-    if (e[i] == "'") {
-      e = spli(i, e, "\\");
-      i++;
-      lg++;
+  let g = 0;
+  for (let i = 0; i < Game.length; i++) {
+    if (Game[i] == "'") {
+      e = spli(i+g, e, "\\");
+      e = e.replace("'", "▙");
+      g++;
     }
-    console.log(lg);
   }
+  e = e.replaceAll("▙", "'");
   return e;
 }
 </script>
