@@ -15,16 +15,24 @@ function PullGame(Name) {
 <button onclick="document.getElementById('c').value = compileGame(document.getElementById('c').value);">Compile</button>
 <script>
 function spli(oneBef, str, rep) {
-    let f = str.split(str[oneBef])[0];
-    let e = str[oneBef] + str.split(str[oneBef])[1];
+	let ss = str;
+    let og = str[oneBef]
+	ss = ss.replace("'", "@");
+    let f = ss.split("@")[0];
+    let e = og + "" + ss.split("@")[1];
+    console.log(ss);
     return f + "" + rep + "" + e;
 }
 function compileGame(Game) {
   let e = Game;
-  for (let i = 0; i < Game.length; i++) {
-    if (Game[i] == "'") {
+  let lg = Game.length;
+  for (let i = 0; i < lg; i++) {
+    if (e[i] == "'") {
       e = spli(i, e, "\\");
+      i++;
+      lg++;
     }
+    console.log(lg);
   }
   return e;
 }
