@@ -1,0 +1,18 @@
+<title>UB Games</title>
+<h1>Welcome to UB Games</h1>
+<p>Search game:</p>
+<input id="searchBar">
+<button id="searchButton">Search</button>
+<br>
+<br>
+<br>
+<h2>Featured games:</h2>
+<br>
+<br>
+<p>None are featured</p>
+<script>
+document.getElementById("searchButton").addEventListener('click', () => {
+	let srch = document.getElementById("searchBar").value;
+    window.open("https://github.UB_Games.io/?=" + srch);
+});
+</script>
