@@ -23,6 +23,7 @@ function spli(oneBef, str, rep) {
     return f + "" + rep + "" + e;
 }
 function compileGame(Game) {
+  Game = Game.replaceAll("\n","");
   let e = Game;
   let g = 0;
   for (let i = 0; i < Game.length; i++) {
