@@ -1,18 +1,28 @@
 <title>UB Games</title>
-<h1>Welcome to UB Games</h1>
+<h1 id="hdr-1">Welcome to UB Games</h1>
 <p>Search game:</p>
 <input id="searchBar">
 <button id="searchButton">Search</button>
-<br>
-<br>
-<br>
-<h2>Featured games:</h2>
-<br>
-<br>
-<p>None are featured</p>
+<div id="feat">
+	<br>
+	<br>
+	<br>
+	<h2>Featured games:</h2>
+	<br>
+	<br>
+	<p>None are featured</p>
+</div>
 <script>
+function st() {
+    if (window.location.href.includes("sc=(")) {
+	document.getElementById("hdr-1").innerHTML = "UB Games";
+	document.getElementById("feat").innerHTML = "";
+	document.getElementById("searchBar").value = window.location.href.split("sc=(")[1].split(")")[0];
+    }
+}
 document.getElementById("searchButton").addEventListener('click', () => {
 	let srch = document.getElementById("searchBar").value;
     window.open("https://commandmaster64.github.io/UB_Games.io/?=" + srch);
 });
+	st();
 </script>
