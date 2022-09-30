@@ -6,7 +6,6 @@ function st() {
 	    }
 	}
 	document.getElementById("hdr-1").innerHTML = "UB Games";
-	document.getElementById("feat").innerHTML = "";
 	document.getElementById("searchBar").value = window.location.href.split("sc=(")[1].split(")")[0];
     }
     if (window.location.href.includes("play=(")) {
