@@ -9,7 +9,7 @@ function st() {
 	document.getElementById("searchBar").value = window.location.href.split("sc=(")[1].split(")")[0];
     }
     if (window.location.href.includes("play=(")) {
-	let game = window.location.href.split("play=(")[1].split(")")[0];
+	let game = window.location.href.replaceAll("%20", " ").split("play=(")[1].split(")")[0];
 	document.getElementById("hdr-1").innerHTML = "UB Games";
 	document.getElementById("feat").innerHTML = PullGame(game);
     }
