@@ -12,7 +12,7 @@ function st() {
     if (window.location.href.includes("play=(")) {
 	let game = window.location.href.split("play=(")[1].split(")")[0];
 	document.getElementById("hdr-1").innerHTML = "UB Games";
-	document.getElementById("feat").innerHTML = Games[Games.indexOf(game)+1];
+	document.getElementById("feat").innerHTML = PullGame(game);
     }
 }
 document.getElementById("searchButton").addEventListener('click', () => {
