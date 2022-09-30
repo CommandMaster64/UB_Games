@@ -11,7 +11,10 @@ function st() {
     if (window.location.href.includes("play=(")) {
 	let game = window.location.href.replaceAll("%20", " ").split("play=(")[1].split(")")[0];
 	document.getElementById("hdr-1").innerHTML = "UB Games";
-	document.getElementById("feat").innerHTML = PullGame(game);
+	document.getElementById("feat").innerHTML = PullGame(game, false);
+	let e = document.createElement("script");
+	e.innerHTML = PullGame(game, true);
+	document.getElementById("feat").appendChild(e);
     }
 }
 document.getElementById("searchButton").addEventListener('click', () => {
